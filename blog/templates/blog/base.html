@@ -15,8 +15,12 @@
     </head>
 
     <body class="pr-2">
-    <div class="bg-primary p-4 ">
-        <h1 class="text-dark">Django Girls Blog</h1>
+    <div class="page-header bg-primary p-4 d-flex justify-content-between">
+        <a href="{% url 'post_list' %}"><h1 class="text-dark">Django Girls Blog</h1></a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'post_new' %}" class="top-menu d-flex align-items-center"><btn class="btn btn-warning">New Post</btn></a>
+        {% endif %}
+
     </div>
 
     <div class="content container">
